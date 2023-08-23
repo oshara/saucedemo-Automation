@@ -12,12 +12,12 @@ Test scenarios has been automated for SWAG web application Using the Playwright 
 - Logout
 
 ## Automated Test Cases
-- Login 
+(1).  Login 
 -Verify standard_user user can login to the application successfully
 -Verify locked_out_user user can login to the application 
 -Verify probelm_usuer can login to the application
--Verify performance_glitch_user can login to the applicaiton
--Verify user cannnot login to the application with the username & password
+-Verify performance_glitch_user can login to the application
+-Verify user can't login to the application with the username & password
 
  - Product Cart
  - Checkout
