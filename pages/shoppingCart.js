@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-exports.ShoopingCartPage= class ShoopingCartPage{
+exports.ShoppingCartPage= class ShoppingCartPage{
 
     constructor(page){
         this.page=page;

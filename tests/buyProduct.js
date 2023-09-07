@@ -1,7 +1,7 @@
 import {test} from '@playwright/test';
 import { LoginPage } from '../pages/login';
 import { ProductPage } from '../pages/product';
-import { ShoopingCartPage } from '../pages/shoppingCart';
+import { ShoppingCartPage } from '../pages/shoppingCart';
 import { YourInformationPage } from '../pages/yourInformation';
 import { CheckoutPage } from '../pages/checkout';
 import {CheckoutCompletePage} from '../pages/checkoutComplete';
@@ -11,7 +11,7 @@ export const BuyProducts=()=>{
     
     const Login = new LoginPage(page);
     const ProductObj = new ProductPage(page);
-    const ShoppingCartObj = new ShoopingCartPage(page);
+    const ShoppingCartObj = new ShoppingCartPage(page);
     const YourInforObj= new YourInformationPage(page);
     const CheckoutObj= new CheckoutPage(page);
     const CompletePageObj= new CheckoutCompletePage(page)
