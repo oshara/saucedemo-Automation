@@ -8,6 +8,8 @@ exports.ProductPage = class ProductPage {
         this.addToCartBtn = page.locator('#add-to-cart-sauce-labs-backpack')
         this.shoppingCartIcon = page.locator('#shopping_cart_container');
 
+        this.bikeAddToCartBtn = page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]');
+        this.bikeTitle = page.locator('#item_0_title_link');
     }
 
     async addProduct() {
@@ -18,5 +20,11 @@ exports.ProductPage = class ProductPage {
 
     async clickShoppingCart() {
         await this.shoppingCartIcon.click();
+    }
+
+    async addBikeProduct(){
+        await this.bikeAddToCartBtn.click();
+        await this.bikeTitle.waitFor();
+        await expect(this.bikeTitle).toHaveText('Sauce Labs Bike Light');
     }
 }

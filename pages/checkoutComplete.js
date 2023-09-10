@@ -14,7 +14,7 @@ exports.CheckoutCompletePage =class CheckoutCompletePage{
     }
 
     async clickBackToHomeBtn(){
-        await this.page.pause();
+        //await this.page.pause();
         await this.backToHomeBtn.click();
     }
 }

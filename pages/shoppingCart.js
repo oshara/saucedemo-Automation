@@ -5,6 +5,7 @@ exports.ShoppingCartPage= class ShoppingCartPage{
         this.page=page;
         this.checkoutBtn= page.locator('#checkout');
         this.backPackTitleName = page.locator('#item_4_title_link');
+        this.bikeTitleName = page.locator('#item_0_title_link');
 
     }
 
@@ -16,5 +17,9 @@ exports.ShoppingCartPage= class ShoppingCartPage{
 
     async checkoutProduct(){
         await this.checkoutBtn.click();
+    }
+
+    async validatingAddedBikeTitle(){
+        await expect(this.bikeTitleName).toHaveText("Sauce Labs Bike Light");
     }
 }

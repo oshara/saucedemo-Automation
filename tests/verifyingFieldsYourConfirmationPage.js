@@ -4,6 +4,7 @@ import {ProductPage} from "../pages/product";
 import {ShoppingCartPage} from '../pages/shoppingCart';
 import {YourInformationPage} from '../pages/yourInformation';
 import { firstName,lastName,postalCode } from '../data-config';
+import { url } from '../environment-config';
 
 export const verifyFieldsYourInfor=()=>{
 
@@ -13,7 +14,7 @@ test.beforeEach(async({page})=>{
     const ShoppingCartObj = new ShoppingCartPage(page);
     
 
-    await page.goto('https://www.saucedemo.com/');
+    await page.goto(url);
     await Login.login("standard_user","secret_sauce");
 
     await ProductObj.addProduct();
