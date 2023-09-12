@@ -7,6 +7,8 @@ exports.ShoppingCartPage= class ShoppingCartPage{
         this.backPackTitleName = page.locator('#item_4_title_link');
         this.bikeTitleName = page.locator('#item_0_title_link');
 
+        this.removeProductBtn = page.locator("#remove-sauce-labs-backpack");
+
     }
 
 
@@ -22,4 +24,10 @@ exports.ShoppingCartPage= class ShoppingCartPage{
     async validatingAddedBikeTitle(){
         await expect(this.bikeTitleName).toHaveText("Sauce Labs Bike Light");
     }
+
+    async removeProduct(){
+        await this.removeProductBtn.click();
+    }
+
+
 }
