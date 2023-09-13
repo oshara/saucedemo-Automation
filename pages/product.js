@@ -1,4 +1,5 @@
 import { expect } from "@playwright/test";
+import { url } from "../environment-config";
 exports.ProductPage = class ProductPage {
     constructor(page) {
         this.page = page;
@@ -10,6 +11,9 @@ exports.ProductPage = class ProductPage {
 
         this.bikeAddToCartBtn = page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]');
         this.bikeTitle = page.locator('#item_0_title_link');
+
+        this.menuIcon = page.locator('#react-burger-menu-btn');
+        this.logoutBtn = page.locator('#logout_sidebar_link');
     }
 
     async addProduct() {
@@ -26,5 +30,11 @@ exports.ProductPage = class ProductPage {
         await this.bikeAddToCartBtn.click();
         await this.bikeTitle.waitFor();
         await expect(this.bikeTitle).toHaveText('Sauce Labs Bike Light');
+    }
+
+    async logout(){
+        await this.menuIcon.click();
+        await this.logoutBtn.click();
+        await expect(this.page).toHaveURL(url)
     }
 }
